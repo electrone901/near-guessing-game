@@ -103175,8 +103175,6 @@ function App() {
     window.location.reload();
   };
 
-  console.log("winningNumber", winningNumber);
-
   const checkGuessNumber = async e => {
     e.preventDefault();
 
