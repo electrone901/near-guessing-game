@@ -46881,6 +46881,7 @@ async function initContract() {
 }
 
 function logout() {
+  console.log("logout");
   window.walletConnection.signOut(); // reload page
 
   window.location.replace(window.location.origin + window.location.pathname);
@@ -103007,7 +103008,7 @@ const Navbar = _ref => {
     endIcon: /*#__PURE__*/_react.default.createElement(_VerifiedUserSharp.default, null)
   }, account, ".testnet") : '', /*#__PURE__*/_react.default.createElement(_Button.default, {
     className: "link",
-    onClick: logout
+    onClick: () => logout()
   }, "Sign out"), /*#__PURE__*/_react.default.createElement(_IconButton.default, {
     edge: "end",
     "aria-label": "account of current user",
@@ -103158,8 +103159,9 @@ function App() {
     height
   } = (0, _useWindowSize.default)();
 
-  const [winner, setWinner] = _react.default.useState(false); // gets user name 
+  const [winner, setWinner] = _react.default.useState(false);
 
+  console.log("winningNumber", winningNumber); // gets user name 
 
   if (window.accountId) {
     const userArr = window.accountId.split('.');
@@ -103371,7 +103373,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50067" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60631" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
