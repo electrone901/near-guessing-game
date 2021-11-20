@@ -133,7 +133,7 @@ export const Navbar = ({logout, account}) => {
                 </Button>:
                 ''
               }
-              <Button className="link" onClick={logout}>
+              <Button className="link" onClick={() => logout()}>
         Sign out
       </Button>
 

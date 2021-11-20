@@ -29,6 +29,7 @@ export default function App() {
   const { width, height } = useWindowSize()
   const [winner, setWinner] = React.useState(false)
 
+  console.log("winningNumber", winningNumber)
   // gets user name 
   if(window.accountId) {
     const userArr = window.accountId.split('.')
