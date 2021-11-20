@@ -20,7 +20,7 @@ import './Navbar.css'
 
 import logo from '../assets/near.png'
 // import logo from '../assets/logo.jpg'
-export const Navbar = ({logout}) => {
+export const Navbar = ({logout, account}) => {
   const [anchorEl, setAnchorEl] = useState(null)
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null)
 
@@ -123,6 +123,16 @@ export const Navbar = ({logout}) => {
             <div className="grow" />
             <div className="sectionDesktop">
               {/* Add Account  */}
+              {account ? 
+                <Button
+                  variant="contained"
+                  className="connected-btn"
+                  endIcon={<VerifiedUserSharpIcon />}
+                >
+                  {account}.testnet
+                </Button>:
+                ''
+              }
               <Button className="link" onClick={logout}>
         Sign out
       </Button>

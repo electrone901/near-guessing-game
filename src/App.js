@@ -17,6 +17,7 @@ import './global.css'
 import getConfig from './config'
 const { networkId } = getConfig(process.env.NODE_ENV || 'development')
 import { Navbar } from './navbar/Navbar'
+import Footer from './footer/Footer'
 
 export default function App() {
   let user;
@@ -42,7 +43,6 @@ export default function App() {
   const reset = () => {
     window.location.reload()
   }
-  console.log("winningNumber", winningNumber)
 
   const checkGuessNumber = async(e) => {
     e.preventDefault()
@@ -136,7 +136,7 @@ export default function App() {
 
   return (
     <>
-    <Navbar onClick={logout} />
+    <Navbar onClick={logout} account={user} />
     {
       winner ? <Confetti
       width={width}
@@ -151,7 +151,7 @@ export default function App() {
     
     <Container
         className="root-create-pet"
-        style={{ minHeight: '50vh', paddingBottom: '3rem' }}
+        style={{ minHeight: '78vh', paddingBottom: '3rem' }}
       >
         <div>
           <h1>
@@ -203,11 +203,9 @@ export default function App() {
           {showNotification && <Notification />}
         </div>
       </Container>
+      <Footer />
 
       
-
-
-
       {/* <main>
         <h1>
           <label

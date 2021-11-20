@@ -1,0 +1,29 @@
+.links {
+    margin-top: 1.5rem;
+}
+
+.link {
+    margin-top: 1.5rem;
+    margin: 0.7rem;
+    color: white;
+}
+
+.footer-logo {
+    width: 4rem;
+    border-radius: 50%;
+    padding: 5px;
+    margin-left: 4
+rem
+;
+    margin-top: 0.5
+rem
+;
+}
+
+.copyright {
+    padding-bottom: 1rem;
+    text-align: center;
+}
+.grid-links{
+    padding-top: 0.9rem;
+}
