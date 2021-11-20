@@ -1181,4 +1181,4 @@ module.exports="near.eb13a401.png";
 },{"regenerator-runtime/runtime":"QVnC","react":"n8MK","./utils":"FOZT","react-use/lib/useWindowSize":"YYND","react-confetti":"lP6I","@material-ui/core":"dT3j","./global.css":"rDCW","./config":"itQ5","./navbar/Navbar":"CzYR"}],"Focm":[function(require,module,exports) {
 "use strict";var e=n(require("react")),r=n(require("react-dom")),t=n(require("./App")),u=require("./utils");function n(e){return e&&e.__esModule?e:{default:e}}window.nearInitPromise=(0,u.initContract)().then(function(){r.default.render(e.default.createElement(t.default,null),document.querySelector("#root"))}).catch(console.error);
 },{"react":"n8MK","react-dom":"NKHc","./App":"lY9v","./utils":"FOZT"}]},{},["Focm"], null)
-//# sourceMappingURL=src.26d7bcd2.js.map
+//# sourceMappingURL=src.1013f7c4.js.map
