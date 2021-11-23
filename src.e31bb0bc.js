@@ -103103,7 +103103,226 @@ function Footer() {
 
 var _default = Footer;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","./Footer.css":"footer/Footer.css","../assets/logo.jpg":"assets/logo.jpg"}],"App.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","./Footer.css":"footer/Footer.css","../assets/logo.jpg":"assets/logo.jpg"}],"PetGallery.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"CircularProgressWithLabel.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = CircularStatic;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _styles = require("@material-ui/core/styles");
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+var _core = require("@material-ui/core");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function CircularProgressWithLabel(props) {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    style: {
+      height: 'auto',
+      textAlign: 'center',
+      justifyContent: 'center',
+      paddingTop: '5rem'
+    }
+  }, /*#__PURE__*/_react.default.createElement(_core.Box, {
+    position: "relative",
+    display: "inline-flex"
+  }, /*#__PURE__*/_react.default.createElement(_core.CircularProgress, _extends({
+    variant: "determinate"
+  }, props, {
+    style: {
+      width: '200px',
+      height: '200px'
+    }
+  })), /*#__PURE__*/_react.default.createElement(_core.Box, {
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+    position: "absolute",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
+  }, /*#__PURE__*/_react.default.createElement(_core.Typography, {
+    variant: "caption",
+    component: "div",
+    color: "textSecondary",
+    style: {
+      fontSize: '1rem'
+    }
+  }, `${Math.round(props.value)}%`))));
+}
+
+CircularProgressWithLabel.protoTypes = {
+  value: _propTypes.default.number.isRequired
+};
+
+function CircularStatic() {
+  const [progress, setPogress] = (0, _react.useState)(10);
+  (0, _react.useEffect)(() => {
+    const timer = setInterval(() => {
+      setPogress(prevProgress => prevProgress >= 100 ? 0 : prevProgress + 10);
+    }, 800);
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+  return /*#__PURE__*/_react.default.createElement(CircularProgressWithLabel, {
+    value: progress
+  });
+}
+},{"react":"../node_modules/react/index.js","@material-ui/core/styles":"../node_modules/@material-ui/core/esm/styles/index.js","prop-types":"../node_modules/prop-types/index.js","@material-ui/core":"../node_modules/@material-ui/core/esm/index.js"}],"api.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.api = void 0;
+const api = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDY4YzllNUVlYjg0OWY3NUNkQzdjMzhjOTUzYjEwYTVDZUIyRTU5Y0IiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTYyODY1MzQ0NzExOCwibmFtZSI6InBldGdyYW0ifQ.mhS4FK7akbSBrA_uFQoWnu4WyisY__k1DoXgyBIsorA';
+exports.api = api;
+},{}],"PetGallery.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _ImageListItem = _interopRequireDefault(require("@material-ui/core/ImageListItem"));
+
+var _IconButton = _interopRequireDefault(require("@material-ui/core/IconButton"));
+
+var _Button = _interopRequireDefault(require("@material-ui/core/Button"));
+
+var _ImageListItemBar = _interopRequireDefault(require("@material-ui/core/ImageListItemBar"));
+
+require("./PetGallery.css");
+
+var _CircularProgressWithLabel = _interopRequireDefault(require("./CircularProgressWithLabel"));
+
+var _api = require("./api");
+
+var _core = require("@material-ui/core");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+// import { Link } from 'react-router-dom'
+function PetGallery(_ref) {
+  let {
+    checkGuessNumber
+  } = _ref;
+  const [petsData, setPetsData] = (0, _react.useState)([]);
+  const [loading, setLoading] = (0, _react.useState)(false);
+  (0, _react.useEffect)(() => {
+    const loadPets = async () => {
+      try {
+        setLoading(true);
+        let cids = await fetch('https://api.nft.storage', {
+          headers: {
+            Authorization: `Bearer ${_api.api}`,
+            'Content-Type': 'application/json'
+          }
+        });
+        cids = await cids.json();
+        console.log('🚀 ~ file: PetGallery.js ~ line 28 ~ loadPets ~ cids', cids);
+        const temp = [];
+
+        for (let cid of cids.value) {
+          if (cid?.cid) {
+            let data = await fetch(`https://ipfs.io/ipfs/${cid.cid}/metadata.json`);
+            data = await data.json();
+            console.log(' data', data); // formats the imageURL
+
+            const getImage = ipfsURL => {
+              if (!ipfsURL) return;
+              ipfsURL = ipfsURL.split('://');
+              return 'https://ipfs.io/ipfs/' + ipfsURL[1];
+            };
+
+            data.image = await getImage(data.image);
+            data.cid = cid.cid;
+            data.created = cid.created;
+            temp.push(data);
+          }
+        }
+
+        setPetsData(temp);
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+        setLoading(false);
+      }
+    };
+
+    loadPets();
+  }, []);
+  return /*#__PURE__*/_react.default.createElement("div", {
+    style: {
+      minHeight: '70vh',
+      paddingBottom: '3rem'
+    }
+  }, loading ? /*#__PURE__*/_react.default.createElement(_CircularProgressWithLabel.default, null) : /*#__PURE__*/_react.default.createElement("div", {
+    style: {
+      flexGrow: 1
+    }
+  }, /*#__PURE__*/_react.default.createElement(_core.Grid, {
+    container: true,
+    spacing: 1
+  }, petsData.length ? petsData.map((pet, index) => /*#__PURE__*/_react.default.createElement(_core.Grid, {
+    item: true,
+    xs: 6,
+    sm: 3,
+    key: index
+  }, /*#__PURE__*/_react.default.createElement(_ImageListItem.default, {
+    style: {
+      height: '450px',
+      listStyle: 'none'
+    }
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: pet.image,
+    alt: pet.name
+  }), /*#__PURE__*/_react.default.createElement(_ImageListItemBar.default, {
+    title: pet.name,
+    subtitle: /*#__PURE__*/_react.default.createElement("span", null, "by: ", pet.description),
+    actionIcon: /*#__PURE__*/_react.default.createElement(_IconButton.default, {
+      "aria-label": `info about ${pet.name}`,
+      className: "icon"
+    }, /*#__PURE__*/_react.default.createElement(_Button.default, {
+      variant: "contained",
+      size: "small" // component={Link}
+      // to={`/pet-details/${pet.cid}`}
+      ,
+      onClick: e => checkGuessNumber(e, pet.image),
+      className: "view-btn"
+    }, "Mint"))
+  })))) : /*#__PURE__*/_react.default.createElement("h2", null, "No Pets Yet..."))));
+}
+
+var _default = PetGallery;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","@material-ui/core/ImageListItem":"../node_modules/@material-ui/core/esm/ImageListItem/index.js","@material-ui/core/IconButton":"../node_modules/@material-ui/core/esm/IconButton/index.js","@material-ui/core/Button":"../node_modules/@material-ui/core/esm/Button/index.js","@material-ui/core/ImageListItemBar":"../node_modules/@material-ui/core/esm/ImageListItemBar/index.js","./PetGallery.css":"PetGallery.css","./CircularProgressWithLabel":"CircularProgressWithLabel.js","./api":"api.js","@material-ui/core":"../node_modules/@material-ui/core/esm/index.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -103130,6 +103349,8 @@ var _config = _interopRequireDefault(require("./config"));
 var _Navbar = require("./navbar/Navbar");
 
 var _Footer = _interopRequireDefault(require("./footer/Footer"));
+
+var _PetGallery = _interopRequireDefault(require("./PetGallery"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -103161,7 +103382,7 @@ function App() {
 
   const [winner, setWinner] = _react.default.useState(false);
 
-  console.log("winningNumber", winningNumber); // gets user name 
+  console.log('winningNumber', winningNumber); // gets user name
 
   if (window.accountId) {
     const userArr = window.accountId.split('.');
@@ -103177,60 +103398,71 @@ function App() {
     window.location.reload();
   };
 
-  const checkGuessNumber = async e => {
+  const checkGuessNumber = async (e, mintImg) => {
     e.preventDefault();
+    console.log('🚀 ~ file: App.js ~ line 49 ~ checkGuessNumber ~ mintImg', mintImg);
 
-    if (!guessNumb || guessNumb < 0 || guessNumb > 20) {
-      setFeedbackMsg("Please enter a valid number from 0 to 20.");
-    }
+    try {
+      const img = 'https://images.unsplash.com/photo-1633287453177-24823499b02c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80'; //call the contract
 
-    let num1 = winningNumber;
-    let num2 = parseInt(guessNumb);
+      await window.contract.set_greeting({
+        message: `https://images.unsplash.com/photo-1633287453177-24823499b02c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80`
+      }); // shows Notification
 
-    if (num1 == num2) {
-      try {
-        setFeedbackMsg("🏆🏆 You Win! 🏆🏆 ");
-        setWinner(true);
-        setAnimation(true); //call the contract
+      setShowNotification(true); // clean up notification again after 11 seconds
 
-        await window.contract.set_greeting({
-          message: `Winner`
-        }); // shows Notification
+      setTimeout(() => {
+        setShowNotification(false);
+      }, 11000);
+    } catch (e) {
+      alert('Something went wrong! ' + 'Maybe you need to sign out and back in? ' + 'Check your browser console for more info.');
+      throw e;
+    } // let num1 = winningNumber
+    // let num2 = parseInt(guessNumb)
+    // if (num1 == num2) {
+    //   try {
+    //     setFeedbackMsg('🏆🏆 You Win! 🏆🏆 ')
+    //     setWinner(true)
+    //     setAnimation(true)
+    //     //call the contract
+    //     await window.contract.set_greeting({
+    //       message: `Winner`,
+    //     })
+    //     // shows Notification
+    //     setShowNotification(true)
+    //     // clean up notification again after 11 seconds
+    //     setTimeout(() => {
+    //       setShowNotification(false)
+    //     }, 11000)
+    //   } catch (e) {
+    //     alert(
+    //       'Something went wrong! ' +
+    //         'Maybe you need to sign out and back in? ' +
+    //         'Check your browser console for more info.',
+    //     )
+    //     throw e
+    //   }
+    //   return
+    // }
+    // const dif = Math.abs(num1 - num2)
+    // if (dif <= 3) {
+    //   setFeedbackMsg("You're very close😌💭👍!")
+    //   return
+    // }
+    // if (dif > 3 && dif <= 8) {
+    //   setFeedbackMsg("You're lukewarm😊😊😊")
+    //   return
+    // }
+    // if (dif > 10) {
+    //   setFeedbackMsg("You're a bit chilly🥶🥶🥶🥶")
+    //   return
+    // }
 
-        setShowNotification(true); // clean up notification again after 11 seconds
-
-        setTimeout(() => {
-          setShowNotification(false);
-        }, 11000);
-      } catch (e) {
-        alert('Something went wrong! ' + 'Maybe you need to sign out and back in? ' + 'Check your browser console for more info.');
-        throw e;
-      }
-
-      return;
-    }
-
-    const dif = Math.abs(num1 - num2);
-
-    if (dif <= 3) {
-      setFeedbackMsg("You're very close😌💭👍!");
-      return;
-    }
-
-    if (dif > 3 && dif <= 8) {
-      setFeedbackMsg("You're lukewarm😊😊😊");
-      return;
-    }
-
-    if (dif > 10) {
-      setFeedbackMsg("You're a bit chilly🥶🥶🥶🥶");
-      return;
-    }
   }; // The useEffect hook can be used to fire side-effects during render
 
 
   _react.default.useEffect(() => {
-    // sets winnerNum 
+    // sets winnerNum
     setWinningNumber(Math.ceil(Math.random() * 20)); // in this case, we only care to query the contract when signed in
 
     if (window.walletConnection.isSignedIn()) {
@@ -103261,6 +103493,8 @@ function App() {
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Navbar.Navbar, {
     onClick: _utils.logout,
     account: user
+  }), /*#__PURE__*/_react.default.createElement(_PetGallery.default, {
+    checkGuessNumber: checkGuessNumber
   }), winner ? /*#__PURE__*/_react.default.createElement(_reactConfetti.default, {
     width: width,
     height: height,
@@ -103277,41 +103511,7 @@ function App() {
       minHeight: '78vh',
       paddingBottom: '3rem'
     }
-  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, /*#__PURE__*/_react.default.createElement("label", {
-    htmlFor: "greeting",
-    style: {
-      color: 'var(--secondary)',
-      borderBottom: '2px solid var(--secondary)'
-    }
-  }, `Welcome back ${user}!`), /*#__PURE__*/_react.default.createElement("p", null, " Dare to Play? Enter a number from 0 - 20")), /*#__PURE__*/_react.default.createElement("div", {
-    className: "form-container"
-  }, /*#__PURE__*/_react.default.createElement("form", {
-    className: "form",
-    noValidate: true,
-    autoComplete: "off"
-  }, /*#__PURE__*/_react.default.createElement(_core.TextField, {
-    id: "outlined-basic",
-    label: "Guess a number between 0 - 20",
-    variant: "outlined",
-    className: "text-field",
-    defaultValue: guessNumb,
-    type: "number",
-    onChange: e => setGuessNumb(e.target.value)
-  }), /*#__PURE__*/_react.default.createElement(_core.Button, {
-    size: "large",
-    variant: "contained",
-    color: "primary",
-    onClick: checkGuessNumber
-  }, "Go")), /*#__PURE__*/_react.default.createElement("p", {
-    className: "feedbackMsg"
-  }, feedbackMsg), winner ? /*#__PURE__*/_react.default.createElement("div", {
-    className: "btn-play-again"
-  }, /*#__PURE__*/_react.default.createElement(_core.Button, {
-    size: "large",
-    color: "secondary",
-    variant: "contained",
-    onClick: reset
-  }, "Play Again")) : ''), showNotification && /*#__PURE__*/_react.default.createElement(Notification, null))), /*#__PURE__*/_react.default.createElement(_Footer.default, null));
+  }, /*#__PURE__*/_react.default.createElement("div", null, showNotification && /*#__PURE__*/_react.default.createElement(Notification, null))), /*#__PURE__*/_react.default.createElement(_Footer.default, null));
 } // this component gets rendered by App after the form is submitted
 
 
@@ -103329,7 +103529,7 @@ function Notification() {
     href: `${urlPrefix}/${window.contract.contractId}`
   }, window.contract.contractId), /*#__PURE__*/_react.default.createElement("footer", null, /*#__PURE__*/_react.default.createElement("div", null, "\u2714 Succeeded"), /*#__PURE__*/_react.default.createElement("div", null, "Just now")));
 }
-},{"regenerator-runtime/runtime":"../node_modules/regenerator-runtime/runtime.js","react":"../node_modules/react/index.js","./utils":"utils.js","react-use/lib/useWindowSize":"../node_modules/react-use/lib/useWindowSize.js","react-confetti":"../node_modules/react-confetti/dist/react-confetti.min.js","@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","./global.css":"global.css","./config":"config.js","./navbar/Navbar":"navbar/Navbar.js","./footer/Footer":"footer/Footer.js"}],"index.js":[function(require,module,exports) {
+},{"regenerator-runtime/runtime":"../node_modules/regenerator-runtime/runtime.js","react":"../node_modules/react/index.js","./utils":"utils.js","react-use/lib/useWindowSize":"../node_modules/react-use/lib/useWindowSize.js","react-confetti":"../node_modules/react-confetti/dist/react-confetti.min.js","@material-ui/core":"../node_modules/@material-ui/core/esm/index.js","./global.css":"global.css","./config":"config.js","./navbar/Navbar":"navbar/Navbar.js","./footer/Footer":"footer/Footer.js","./PetGallery":"PetGallery.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -103373,7 +103573,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60631" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65505" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
