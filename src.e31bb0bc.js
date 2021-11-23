@@ -46772,7 +46772,7 @@ __exportStar(require("./browser-connect"), exports);
 require("error-polyfill");
 
 },{"./key_stores/browser-index":"../node_modules/near-api-js/lib/key_stores/browser-index.js","./common-index":"../node_modules/near-api-js/lib/common-index.js","./browser-connect":"../node_modules/near-api-js/lib/browser-connect.js","error-polyfill":"../node_modules/error-polyfill/index.js"}],"config.js":[function(require,module,exports) {
-const CONTRACT_NAME = "dev-1637343946733-85606909090165" || 'guessing-game.0test.testnet';
+const CONTRACT_NAME = "dev-1637343946733-85606909090165" || '4ever.testnet.0test.testnet';
 
 function getConfig(env) {
   switch (env) {
@@ -103245,15 +103245,17 @@ function PetGallery(_ref) {
             'Content-Type': 'application/json'
           }
         });
-        cids = await cids.json();
-        console.log('🚀 ~ file: PetGallery.js ~ line 28 ~ loadPets ~ cids', cids);
+        cids = await cids.json(); // console.log(
+        //   '🚀 ~ file: PetGallery.js ~ line 28 ~ loadPets ~ cids',
+        //   cids,
+        // )
+
         const temp = [];
 
         for (let cid of cids.value) {
           if (cid?.cid) {
             let data = await fetch(`https://ipfs.io/ipfs/${cid.cid}/metadata.json`);
-            data = await data.json();
-            console.log(' data', data); // formats the imageURL
+            data = await data.json(); // formats the imageURL
 
             const getImage = ipfsURL => {
               if (!ipfsURL) return;
@@ -103382,7 +103384,7 @@ function App() {
 
   const [winner, setWinner] = _react.default.useState(false);
 
-  console.log('winningNumber', winningNumber); // gets user name
+  console.log('window.contract', window.contract); // gets user name
 
   if (window.accountId) {
     const userArr = window.accountId.split('.');
@@ -103400,7 +103402,6 @@ function App() {
 
   const checkGuessNumber = async (e, mintImg) => {
     e.preventDefault();
-    console.log('🚀 ~ file: App.js ~ line 49 ~ checkGuessNumber ~ mintImg', mintImg);
 
     try {
       const img = 'https://images.unsplash.com/photo-1633287453177-24823499b02c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80'; //call the contract
@@ -103573,7 +103574,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65505" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51575" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
